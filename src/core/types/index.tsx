@@ -1,5 +1,11 @@
+export enum SHOW_ACTION_TYPES {
+  REQUEST_SHOWS_PENDING = "show/REQUEST_SHOWS_PENDING",
+  REQUEST_SHOWS_SUCCESS = "show/REQUEST_SHOWS_SUCCESS",
+  REQUEST_SHOWS_ERROR = "show/REQUEST_SHOWS_ERROR",
+}
+
 export type Show = {
-  score: number;
+  score?: number;
   show: {
     id: number;
     url: string;
@@ -57,6 +63,4 @@ export type Show = {
     };
   };
 };
-export type GetShowsResponse = {
-  data: Show[];
-};
+

@@ -17,12 +17,8 @@ const size = {
   
   export const endpoints = {
     shows: {
-      find: keyword => `/search/shows?q=${keyword}`,
+      find: (keyword:string) => `/search/shows?q=${keyword}`,
     },
    }
   
-  export const REQUEST = 'REQUEST';
   
-  export const REQUEST_PENDING = 'REQUEST_PENDING';
-  export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
-  export const REQUEST_FAILED = 'REQUEST_FAILED';

@@ -1,23 +1,24 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "routes/home";
+import * as Styled from "styles";
+import Header from "components/header";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+      <Styled.Main>
+        <Styled.Container>
+          <Header />
+          <Styled.Content>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+          </Styled.Content>
+        </Styled.Container>
+      </Styled.Main>
+    </React.StrictMode>
   );
-}
+};
 
 export default App;
