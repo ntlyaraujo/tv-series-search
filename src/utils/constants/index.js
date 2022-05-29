@@ -16,7 +16,7 @@ const size = {
   /* Links **************** */
   
   export const endpoints = {
-    movies: {
+    shows: {
       find: keyword => `/search/shows?q=${keyword}`,
     },
    }
