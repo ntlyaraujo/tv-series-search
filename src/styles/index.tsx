@@ -59,12 +59,23 @@ const rowFlex = css`
 
 /* COMMON */
 export const Span = styled.span`
-  margin-left: 0.5rem;
-  width: 50%;
+  margin: 1rem;
   flex-shrink: 3;
+  @media ${device.mobile} {
+    ${fluid};
+  }
+  @media ${device.tablet} {
+    ${fluid};
+  }
+  @media ${device.laptop} {
+    ${fixed50};
+  }
+  @media ${device.desktop} {
+    ${fixed50};
+  }
 `;
 export const Image = styled.img`
-  width: 15rem;
+  max-width: 15rem;
 `;
 export const Paragraph = styled.p`
   ${green}
@@ -248,22 +259,20 @@ export const DetailBox = styled.div`
   ${rowFlex}
   ${fluid}
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   ${paddingBase}
 `;
-export const DetailContent = styled.div`
-  ${rowFlex};
-  align-items: flex-start;
-  ${borderGreen}
-`;
+
 export const DetailCard = styled.div`
   ${shadow}
-  flex-grow: 2;
+  flex-grow: 3;
   flex-basis: 5rem;
-  ${bgLight}
-  margin-left: 1rem;
-  ${paddingBase}
+  ${bgLight};
+  ${paddingBase};
+  @media ${device.laptop} {
+    margin-top: 1rem;
+  }
 `;
 export const DetailCardHeading = styled.h2`
   ${dark}
