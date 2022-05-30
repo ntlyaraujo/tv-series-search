@@ -19,6 +19,7 @@ export const device = {
 export const endpoints = {
   shows: {
     find: (keyword: string) => `/search/shows?q=${keyword}`,
+    findById: (id: number) => `/shows/${id}`,
   },
 };
 

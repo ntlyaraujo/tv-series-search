@@ -1,5 +1,5 @@
 import { SHOW_ACTION_TYPES, Show } from "core/types";
-import { createAction, Action, ActionWithPayload } from "../utils";
+import { createAction, Action, ActionWithPayload } from "core/redux/utils";
 import { getShows } from "core/api";
 
 type RequestShowsByKeyword = Action<SHOW_ACTION_TYPES.REQUEST_SHOWS_PENDING>;

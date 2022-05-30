@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import * as Styled from "styles";
 import noPoster from "assets/imgs/no-img-portrait-text.png";
 import { removeTags, getTheYear } from "utils/helpers";
@@ -6,11 +6,13 @@ import { useGlobalContext } from "core/contexts";
 import { Show } from "core/types";
 
 type Props = {
-    showDetails:Show
-}
+  showDetails: Show;
+};
 
-const DeatilsPage = (props:Props) => {
-    const { copy } = useGlobalContext()
+const DeatilsPage = (props: Props) => {
+  const { copy } = useGlobalContext();
+  const params = useParams();
+  
   const {
     image,
     name,
@@ -23,7 +25,7 @@ const DeatilsPage = (props:Props) => {
     ended,
     schedule,
     officialSite,
-  } = copy.show
+  } = copy.show;
 
   return (
     <Styled.SectionColumn>
@@ -69,7 +71,11 @@ const DeatilsPage = (props:Props) => {
           </Styled.TextItem>
           <Styled.TextItem>
             <b>Official Site: </b>{" "}
-            <a href={officialSite?officialSite:""} target="_blank" rel="noreferrer">
+            <a
+              href={officialSite ? officialSite : ""}
+              target="_blank"
+              rel="noreferrer"
+            >
               {officialSite}
             </a>
           </Styled.TextItem>

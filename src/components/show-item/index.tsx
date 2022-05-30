@@ -3,15 +3,13 @@ import noPoster from "assets/imgs/no-img-portrait-text.png";
 
 import { Show } from "core/types";
 import { useGlobalContext } from "core/contexts";
-import { useParams } from "react-router-dom";
 type Props = {
   show:Show
 }
 
 const ShowItem = (props:Props) => {
 
-  const params = useParams();
-  console.log("params: ",params)
+  
   const { setCopy } = useGlobalContext()
   
   const onCardClick = () => {

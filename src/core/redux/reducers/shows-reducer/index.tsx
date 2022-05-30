@@ -1,19 +1,16 @@
 import { SHOW_ACTION_TYPES, Show } from "core/types";
-import { ShowAction } from "core/redux/actions";
-import { emptyShow } from "utils/constants";
+import { ShowAction } from "core/redux/actions/shows-action";
 
 export type ShowsState = {
   shows: Show[];
   isPending: boolean;
   error: Error | null;
-  showDetails: Show;
 };
 
 const SHOWS_INITIAL_STATE: ShowsState = {
   shows: [],
   isPending: false,
   error: null,
-  showDetails: emptyShow,
 };
 
 export const showsReducer = (
@@ -43,3 +40,4 @@ export const showsReducer = (
       return state;
   }
 };
+
