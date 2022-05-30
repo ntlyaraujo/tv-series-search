@@ -3,20 +3,24 @@ import noPoster from "assets/imgs/no-img-portrait-text.png";
 
 import { Show } from "core/types";
 import { useGlobalContext } from "core/contexts";
+import { useParams } from "react-router-dom";
 type Props = {
   show:Show
 }
 
 const ShowItem = (props:Props) => {
+
+  const params = useParams();
+  console.log("params: ",params)
   const { setCopy } = useGlobalContext()
   
   const onCardClick = () => {
     setCopy(props.show);
   };
   
-  const { image, name, network, genres } = props.show.show;
+  const { id, image, name, network, genres } = props.show.show;
   return (
-    <Styled.CardLink to="/details" onClick={onCardClick} >
+    <Styled.CardLink to={id+"/details"} onClick={onCardClick} >
       <Styled.Card>
         <Styled.CardImageBox>
           <Styled.Image

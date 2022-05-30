@@ -20,7 +20,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route
-                  path="details"
+                  path="/:id/details"
                   element={<DeatilsPage showDetails={copy} />}
                 />
               </Routes>
