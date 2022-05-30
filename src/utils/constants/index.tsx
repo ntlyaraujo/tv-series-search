@@ -7,6 +7,7 @@ const size = {
 };
 
 export const device = {
+  fold: `(max-width: ${size.mobile})`,
   mobile: `(min-width: ${size.mobile})`,
   tablet: `(min-width: ${size.tablet})`,
   laptop: `(min-width: ${size.laptop})`,

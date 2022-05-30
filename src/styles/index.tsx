@@ -185,6 +185,9 @@ export const SearchButton = styled.button`
   ${white};
   ${fontBase};
   ${paddingBase}
+  @media ${device.fold} {
+    display: none;
+  }
   cursor: pointer;
   outline: none;
   border: none;
@@ -241,8 +244,10 @@ export const Placeholder = styled.div`
   ${borderGreen}
   ${paddingBase}
   ${rowFlex}
+  flex-wrap:wrap;
   background-color: #f1f9f8;
   align-items: center;
+  justify-content: center;
   margin: 1rem;
 `;
 
