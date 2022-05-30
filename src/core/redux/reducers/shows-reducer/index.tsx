@@ -4,12 +4,14 @@ import { ShowAction } from "core/redux/actions/shows-action";
 export type ShowsState = {
   shows: Show[];
   isPending: boolean;
+  empty: boolean;
   error: Error | null;
 };
 
 const SHOWS_INITIAL_STATE: ShowsState = {
   shows: [],
   isPending: false,
+  empty:true,
   error: null,
 };
 
@@ -29,6 +31,7 @@ export const showsReducer = (
         ...state,
         shows: action.payload,
         isPending: false,
+        empty: false
       };
     case SHOW_ACTION_TYPES.REQUEST_SHOWS_ERROR:
       return {

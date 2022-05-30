@@ -76,6 +76,7 @@ export type Show = {
 };
 
 export type ShowDetails ={
+  empty?:boolean
   id: number;
   url: string | null;
   name: string | null;

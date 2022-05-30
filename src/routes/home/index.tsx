@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import * as Styled from "styles";
 import SearchBox from "components/search-box";
 import ShowList from "components/show-list";
-import { requestShowsByKeyword } from "core/redux/actions";
+import { requestShowsByKeyword } from "core/redux/actions/shows-action";
 import { selectShows } from "core/redux/selectors";
 import Placeholder from "components/placeholder";
 

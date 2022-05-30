@@ -4,15 +4,36 @@ import noPoster from "assets/imgs/no-img-portrait-text.png";
 import { removeTags, getTheYear } from "utils/helpers";
 import { useGlobalContext } from "core/contexts";
 import { Show } from "core/types";
-
+import { useEffect } from "react";
+import { requestShowById } from "core/redux/actions/show-details-action";
+import { useDispatch, useSelector } from "react-redux";
+import { selectShowDetails, selectShows } from "core/redux/selectors";
 type Props = {
   showDetails: Show;
 };
 
+
 const DeatilsPage = (props: Props) => {
+  const dispatch = useDispatch();
   const { copy } = useGlobalContext();
   const params = useParams();
-  
+  const { setCopy } = useGlobalContext()
+
+
+  const shows = useSelector(selectShows);
+  const requestedShow = useSelector(selectShowDetails);
+
+ useEffect(() => {
+    if (shows.empty) {
+      requestShowById(Number(params.id), dispatch);
+    }
+    
+  },[shows.empty]);
+
+  if(shows.empty){
+    setCopy(requestedShow)
+  }
+
   const {
     image,
     name,

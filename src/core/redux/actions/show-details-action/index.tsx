@@ -30,10 +30,12 @@ export const requestShowById = (
   id: number,
   dispatch: any
 ): RequestShowById => {
+  
   let a = dispatch(createAction(SHOW_ACTION_TYPES.REQUEST_SHOW_DETAILS_PENDING));
   getShowById(id)
     .then((response) => {
       dispatch(requestShowByIdSuccess(response));
+      
     })
     .catch((error) => {
       dispatch(requestShowByIdError(error));
