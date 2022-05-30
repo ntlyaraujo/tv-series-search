@@ -3,64 +3,96 @@ export enum SHOW_ACTION_TYPES {
   REQUEST_SHOWS_SUCCESS = "show/REQUEST_SHOWS_SUCCESS",
   REQUEST_SHOWS_ERROR = "show/REQUEST_SHOWS_ERROR",
 }
+// Mocks
+type Schedule = {
+  time: string;
+  days: string[];
+};
+type Rating = {
+  average: number;
+};
 
+type Country = {
+  name: number;
+  code: number;
+  timezone: number;
+};
+
+type Network = {
+  id: number;
+  name: string;
+  country: Country | null;
+  officialSite: string;
+};
+type Externals = {
+  tvrage: number;
+  thetvdb: number;
+  imdb: string;
+};
+type Image = {
+  medium: string;
+  original: string;
+};
+
+type Href = {
+  href: string;
+};
+type _Links = {
+  self: Href | null;
+  previousepisode: Href | null;
+  nextepisode: Href | null;
+};
 export type Show = {
   score?: number;
   show: {
     id: number;
-    url: string;
-    name: string;
-    type: string;
-    language: string;
+    url: string | null;
+    name: string | null;
+    type: string | null;
+    language: string | null;
     genres: string[];
-    status: string;
-    runtime: number;
-    averageRuntime: number;
-    premiered: string;
-    ended: string;
-    officialSite: string;
-    schedule: {
-      time: string;
-      days: string[];
-    };
-    rating: {
-      average: number;
-    };
-    weight: number;
-    network: {
-      id: number;
-      name: string;
-      country: {
-        name: string;
-        code: string;
-        timezone: string;
-      };
-      officialSite: string;
-    };
-    webChannel: string;
-    dvdCountry: string;
-    externals: {
-      tvrage: number;
-      thetvdb: number;
-      imdb: string;
-    };
-    image: {
-      medium: string;
-      original: string;
-    };
-    summary: string;
-    updated: number;
-    _links: {
-      self: {
-        href: string;
-      };
-      previousepisode: {
-        href: string;
-      };
-      nextepisode: {
-        href: string;
-      };
-    };
+    status: string | null;
+    runtime: number | null;
+    averageRuntime: number | null;
+    premiered: string | null;
+    ended: string | null;
+    officialSite: string | null;
+    schedule: Schedule | null;
+    rating: Rating | null;
+    weight: number | null;
+    network: Network | null;
+    webChannel: string | null;
+    dvdCountry: string | null;
+    externals: Externals | null;
+    image: Image | null;
+    summary: string | null;
+    updated: string | null;
+    _links: _Links | null
   };
 };
 
+export type ShowDetails ={
+  id: number;
+  url: string | null;
+  name: string | null;
+  type: string | null;
+  language: string | null;
+  genres: string[];
+  status: string | null;
+  runtime: number | null;
+  averageRuntime: number | null;
+  premiered: string | null;
+  ended: string | null;
+  officialSite: string | null;
+  schedule: Schedule | null;
+  rating: Rating | null;
+  weight: number | null;
+  network: Network | null;
+  webChannel: string | null;
+  dvdCountry: string | null;
+  externals: Externals | null;
+  image: Image | null;
+  summary: string | null;
+  updated: string | null;
+  _links: _Links | null
+};

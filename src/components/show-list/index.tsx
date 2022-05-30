@@ -12,7 +12,7 @@ const ShowList = (props:ShowListProps) => {
       <ErrorBoundary>
         <Styled.CardList>
           {props.data.map((item) => (
-            <ShowItem show={item.show} key={item.show.id} />
+            <ShowItem show={item} key={item.show.id} />
           ))}
         </Styled.CardList>
       </ErrorBoundary>

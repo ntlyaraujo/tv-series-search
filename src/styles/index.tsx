@@ -61,12 +61,10 @@ const rowFlex = css`
 export const Span = styled.span`
   margin-left: 0.5rem;
   width: 50%;
-  ${borderGreen}
   flex-shrink: 3;
 `;
 export const Image = styled.img`
   width: 15rem;
-  ${borderGreen}
 `;
 export const Paragraph = styled.p`
   ${green}
@@ -122,14 +120,12 @@ export const Logo = styled.img`
 export const Content = styled.div`
   ${fluid};
   ${paddingBase}
-  ${borderGreen}
 `;
 export const SectionColumn = styled.div`
   ${fluid};
   ${columnFlex}
   margin-top:1rem;
   align-items: center;
-  ${borderGreen}
 `;
 export const SectionRow = styled.div`
   ${fluid};
@@ -182,11 +178,6 @@ export const SearchButton = styled.button`
   outline: none;
   border: none;
   border-radius: 0 0.2rem 0.2rem 0;
-`;
-export const SearchResultsCounter = styled.span`
-  ${dark};
-  ${paddingBase};
-  font-size: 1rem;
 `;
 
 /* CARD SHOW LIST */
@@ -260,7 +251,6 @@ export const DetailBox = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   ${paddingBase}
-  ${borderGreen}
 `;
 export const DetailContent = styled.div`
   ${rowFlex};
