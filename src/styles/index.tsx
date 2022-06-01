@@ -29,6 +29,12 @@ const borderGreen = css`
   border-width: thin;
   border-color: #3c948b;
 `;
+const borderBlack = css`
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+`;
+
 const fluid = css`
   width: 100%;
 `;
@@ -78,7 +84,6 @@ export const Image = styled.img`
   max-width: 15rem;
 `;
 export const Paragraph = styled.p`
-  ${green}
   font-size: 100%;
   margin-left: 1rem;
 `;
@@ -246,6 +251,30 @@ export const Placeholder = styled.div`
   ${rowFlex}
   flex-wrap:wrap;
   background-color: #f1f9f8;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+`;
+export const PlaceholderWarning = styled.div`
+  ${shadow}
+  ${fluid}
+  ${borderBlack}
+  ${paddingBase}
+  ${rowFlex}
+  flex-wrap:wrap;
+  background-color: #ffcbc2;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+`;
+export const PlaceholderError = styled.div`
+  ${shadow}
+  ${fluid}
+  ${borderBlack}
+  ${paddingBase}
+  ${rowFlex}
+  flex-wrap:wrap;
+  background-color: #FFC9C2 ;
   align-items: center;
   justify-content: center;
   margin: 1rem;

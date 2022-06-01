@@ -6,6 +6,7 @@ export type ShowsState = {
   isPending: boolean;
   empty: boolean;
   error: Error | null;
+  isReturnEmpty: boolean;
 };
 
 const SHOWS_INITIAL_STATE: ShowsState = {
@@ -13,6 +14,7 @@ const SHOWS_INITIAL_STATE: ShowsState = {
   isPending: false,
   empty:true,
   error: null,
+  isReturnEmpty: false
 };
 
 export const showsReducer = (
@@ -31,7 +33,8 @@ export const showsReducer = (
         ...state,
         shows: action.payload,
         isPending: false,
-        empty: false
+        empty: false,
+        isReturnEmpty:!(action.payload.length)
       };
     case SHOW_ACTION_TYPES.REQUEST_SHOWS_ERROR:
       return {

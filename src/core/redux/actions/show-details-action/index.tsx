@@ -18,6 +18,7 @@ export type ShowDetailsAction =
   | RequestShowByIdError;
 
 const requestShowByIdSuccess = (response: ShowDetails): RequestShowByIdSuccess => {
+  
   return createAction(SHOW_ACTION_TYPES.REQUEST_SHOW_DETAILS_SUCCESS, response);
 };
 
@@ -34,6 +35,7 @@ export const requestShowById = (
   let a = dispatch(createAction(SHOW_ACTION_TYPES.REQUEST_SHOW_DETAILS_PENDING));
   getShowById(id)
     .then((response) => {
+      
       dispatch(requestShowByIdSuccess(response));
       
     })
