@@ -18,5 +18,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - Tested browsers: Opera GX LVL3(core: 86.0.4363.64), Google Chrome (102.0.5005.63), Firefox (100.0.2) and Edge (101.0.1210.53).
 - Context is primarily used to pass forward data where it needs to be accessible by other views. 
 - Redux in used to intercept internet request actions and place at store.
-- Ability to send a direct link to the detailed view, so it can not be completely dependent on the search view.
+- Ability to send a direct link to the detailed view, so it's not completely dependent on the search view.
 - Ability to Handle errors.
